@@ -3,24 +3,28 @@ import SecondPage from "./SecondPage";
 
 export default function Homepage() {
 	const [pressedButton, setPressedButton] = useState({voting: "false", breeds: "false", gallery: "false"});
-	console.log(pressedButton);
+	// console.log(pressedButton);
 
 
 function renderVotingPage(event) {
 	event.preventDefault();
-	setPressedButton.voting(true);
-	// event.currentTarget.classList.toggle('active');
-		// console.log(pressedButton);
+	setPressedButton({voting: "true"});
+	event.currentTarget.classList.add('active');
+
+	// How to remove active class in two others buttons at the same time?
+
 }
 
 function renderBreedsPage(event) {
 	event.preventDefault();
-	setPressedButton.breeds(true);
+	setPressedButton({breeds: "true"});
+	event.currentTarget.classList.add('active');
 }
 
 function renderGalleryPage(event) {
 	event.preventDefault();
-	setPressedButton.gallery(true);
+	setPressedButton({gallery: "true"});
+	event.currentTarget.classList.add('active');
 }
 
 		return (
@@ -34,7 +38,7 @@ function renderGalleryPage(event) {
 					</div>
 			</div>
 			<div className="col">
-				<SecondPage pressedButton={pressedButton}/>
+				<SecondPage pressed={pressedButton}/>
 			</div>
 		</div>
 		);

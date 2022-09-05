@@ -3,20 +3,20 @@ import Breeds from "./Breeds";
 import Gallery from "./Gallery";
 
 export default function SecondPage(props) {
-	// console.log(props.pressedButton.voting);
-	if (props.pressedButton.voting) {
+	console.log(props);
+	if (props.pressed.voting) {
 	return (
 		<Voting />
 	)
-	} else if (props.pressedButton.breeds) {
+	} else if (props.pressed.breeds) {
 		return (
 			<Breeds />
 		)
-	} else if (props.pressedButton.gallery) {
+	} else if (props.pressed.gallery) {
 			return (
 		<Gallery />
 	)
-	} else {
+	} else {  // This part doesn't work, I have no idea why
 		return (
 		<p>Here is a picture</p>
 	);
