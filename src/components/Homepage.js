@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import SecondPage from "./SecondPage";
 
 export default function Homepage() {
-	const [pressedButton, setPressedButton] = useState({voting: "false", breeds: "false", gallery: "false"});
+	const [pressedButton, setPressedButton] = useState({voting: false, breeds: false, gallery: false});
 	// console.log(pressedButton);
 
 
