@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+// import {Link} from 'react-router-dom';
 import SecondPage from "./SecondPage";
 
 export default function Homepage() {
@@ -8,7 +9,7 @@ export default function Homepage() {
 
 function renderVotingPage(event) {
 	event.preventDefault();
-	setPressedButton({voting: "true"});
+	setPressedButton({voting: true});
 	event.currentTarget.classList.add('active');
 
 	// How to remove active class in two others buttons at the same time?
@@ -17,13 +18,13 @@ function renderVotingPage(event) {
 
 function renderBreedsPage(event) {
 	event.preventDefault();
-	setPressedButton({breeds: "true"});
+	setPressedButton({breeds: true});
 	event.currentTarget.classList.add('active');
 }
 
 function renderGalleryPage(event) {
 	event.preventDefault();
-	setPressedButton({gallery: "true"});
+	setPressedButton({gallery: true});
 	event.currentTarget.classList.add('active');
 }
 
@@ -32,7 +33,9 @@ function renderGalleryPage(event) {
 			<div className="col">
 				<h2>Lets start using The Cat API</h2>
 					<div className="btn-group" role="group" aria-label="Basic example">
+					{/* <Link to="/votings"> */}
 						<button type="button" className={'btn btn-primary'} onClick={renderVotingPage}>VOTING</button>
+					{/* </Link> */}
 						<button type="button" className={'btn btn-primary'} onClick={renderBreedsPage}>BREEDS</button>
 						<button type="button" className={'btn btn-primary'} onClick={renderGalleryPage}>GALLERY</button>
 					</div>
