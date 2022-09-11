@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-// import {Link} from 'react-router-dom';
+import {Outlet, Link} from 'react-router-dom';
 import SecondPage from "./SecondPage";
+
 
 export default function Homepage() {
 	const [pressedButton, setPressedButton] = useState({voting: false, breeds: false, gallery: false});
@@ -32,17 +33,19 @@ function renderGalleryPage(event) {
 		<div className="row">
 			<div className="col">
 				<h2>Lets start using The Cat API</h2>
-					<div className="btn-group" role="group" aria-label="Basic example">
-					{/* <Link to="/votings"> */}
-						<button type="button" className={'btn btn-primary'} onClick={renderVotingPage}>VOTING</button>
-					{/* </Link> */}
-						<button type="button" className={'btn btn-primary'} onClick={renderBreedsPage}>BREEDS</button>
-						<button type="button" className={'btn btn-primary'} onClick={renderGalleryPage}>GALLERY</button>
-					</div>
+					<nav>
+						<div className="btn-group" role="group" aria-label="Basic example">
+						<Link to="/votings">VOTING</Link>
+							<button type="button" className={'btn btn-primary'} onClick={renderVotingPage}>VOTING</button>
+							<button type="button" className={'btn btn-primary'} onClick={renderBreedsPage}>BREEDS</button>
+							<button type="button" className={'btn btn-primary'} onClick={renderGalleryPage}>GALLERY</button>
+						</div>
+					</nav>
 			</div>
 			<div className="col">
 				<SecondPage pressed={pressedButton}/>
 			</div>
+			<Outlet />
 		</div>
 		);
 }

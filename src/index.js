@@ -1,17 +1,21 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Voting from './components/Voting';
 
-const root = createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<Router>
-			<App />
-		</Router>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<App />}>
+					<Route path="votings" element={<Voting />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	</React.StrictMode>
 );
 
