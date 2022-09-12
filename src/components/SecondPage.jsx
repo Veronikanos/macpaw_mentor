@@ -1,13 +1,17 @@
 import Voting from "./Voting";
 import Breeds from "./Breeds";
 import Gallery from "./Gallery";
+// import { Outlet } from 'react-router-dom';
 // import {Routes, Route} from 'react-router-dom';
 
 export default function SecondPage(props) {
 	console.log(props);
 	if (props.pressed.voting) {
 	return (
-		<Voting />
+		<div>
+			<Voting isVoted={props.pressed.voting}/>
+			{/* <Outlet /> */}
+		</div>
 	// 	<Routes>
 	// 	<Route path="/votings" element={<Voting />} />
 	// </Routes>
