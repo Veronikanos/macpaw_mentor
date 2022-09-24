@@ -1,7 +1,7 @@
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
 
-function App({ children }) {
+export default function App() {
   return (
     <div className="App">
       <nav className="App__nav">
@@ -15,5 +15,3 @@ function App({ children }) {
     </div>
   );
 }
-
-export default App;
