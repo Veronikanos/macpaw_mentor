@@ -3,19 +3,34 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Voting from "./components/Voting";
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "voting",
+        element: <div>voting</div>,
+      },
+      {
+        path: "breeds",
+        element: <div>breeds</div>,
+      },
+      {
+        path: "gallery",
+        element: <div>gallery</div>,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="votings" element={<Voting />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

@@ -1,18 +1,17 @@
 import "./App.css";
-import Homepage from "./components/Homepage";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Homepage />
-        {/* <Routes>
-				<Route path="/" element={<Homepage />} />
-			</Routes> */}
-      </header>
+      <nav className="App__nav">
+        <Link to="/voting">voting</Link>
+        <Link to="/breeds">breeds</Link>
+        <Link to="/gallery">gallery</Link>
+      </nav>
+      <main className="App__main">
+        <Outlet />
+      </main>
     </div>
   );
 }
-
-export default App;
